@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nghiêm lập trình</title>
+    <link rel="stylesheet" href="envenlope.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="envelope"></div>
+        <div class="card" id="test">
+            <h1 class="message" id="message1">Làm ngừơi yêu anh nhé...!</h1>
+            <div class="pikachu">
+                <div class="limbs"></div>
+                <div class="heart"></div>
+                <div class="arms"></div>
+                <div class="smile"></div>
+            </div>
+        </div>
+        <div class="cover"></div>
+        <div class="lid"></div>
+        <div class="shadow"></div>
+        <div class="btn-action">
+            <button class="btn btn-yes" id="btn-yes" onclick="handleYes()">Yes</button>
+            <button class="btn btn-no" onclick="handleNo()">No</button>
+        </div>
+
+    </div>
+
+    <script>
+        window.onload = function () {
+            var go = document.getElementById("test");
+            go.onclick = function () {
+                location.href = "./pikachu.html"
+            }
+        }
+        const handleNo = () => {
+            const btnYes = document.getElementById("btn-yes");
+            var currentSize = window.getComputedStyle(btnYes).fontSize;
+            var newSize = parseInt(currentSize) + 2;
+
+            btnYes.style.fontSize = newSize + "px";
+        }
+
+        const handleYes = () => {
+            const message = document.getElementById("message1");
+            message.innerText = "Anh yêu em rất nhiều...!"
+        }
+
+    </script>
+</body>
+</html>
